@@ -21,6 +21,8 @@ Deprecation Notice
 ******************
 Please note, this version is now deprecated. We are recommending you migrate to v5. `Migration guide from v4`_
 
+This repository remains open for archival purposes, or for those who wish to continue using v4 codebase.
+
 Ever since December 2019, this open-source project has become the culmination of dedication and research towards figuring out the best way to bring **interactions from Discord to you:** we are an easy, simple, scalable and modular library for Discord interactions.
 
 - Tired of using numerous module dependencies for slash commands and buttons?
