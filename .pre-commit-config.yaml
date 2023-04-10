@@ -53,7 +53,7 @@ repos:
         types: [file, python]
 ci:
   autoupdate_branch: "unstable"
-  autofix_prs: true
+  autofix_prs: false
   autoupdate_commit_msg: "ci: weekly check."
   autoupdate_schedule: weekly
   autofix_commit_msg: "ci: correct from checks."

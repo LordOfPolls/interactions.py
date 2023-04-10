@@ -27,8 +27,8 @@ requirements = read_requirements("requirements.txt")
 setup(
     name="discord-py-interactions",
     version=VERSION,
-    author="goverfl0w",
-    author_email="james.discord.interactions@gmail.com",
+    author="LordOfPolls",
+    author_email="dev@lordofpolls.com",
     description="Easy, simple, scalable and modular: a Python API wrapper for interactions.",
     extras_require=extras,
     install_requires=requirements,

@@ -177,6 +177,11 @@ class Client:
         Returns a list of guilds the bot is in.
         """
 
+        if not self._http or isinstance(self._http, str):
+            raise LibraryException(
+                code=13, message="You cannot use this method until the bot has started!"
+            )
+
         return list(self._http.cache[Guild].values.values())
 
     @property
@@ -250,7 +255,7 @@ class Client:
 
         option_attrs: List[str] = [name for name in Option.__slots__ if not name.startswith("_")]
         choice_attrs: List[str] = [name for name in Choice.__slots__ if not name.startswith("_")]
-        log.info(f"Current attributes to compare: {', '.join(attrs)}.")
+        log.debug(f"Current attributes to compare: {', '.join(attrs)}.")
         clean: bool = True
 
         _command: dict = {}
@@ -453,7 +458,7 @@ class Client:
                 ):
                     raise RuntimeError("Client not authorised for the GUILD_MEMBERS intent.")
                 if (
-                    self._intents.GUILD_MESSAGES in self._intents
+                    self._intents.GUILD_MESSAGE_CONTENT in self._intents
                     and self.me.flags.GATEWAY_MESSAGE_CONTENT not in self.me.flags
                     and self.me.flags.GATEWAY_MESSAGE_CONTENT_LIMITED not in self.me.flags
                 ):
@@ -1790,7 +1795,7 @@ class Client:
         """
 
         def _check(_ctx: ComponentContext) -> bool:
-            if _ctx.data.component_type.value not in {4, 5, 6, 7, 8}:
+            if _ctx.data.component_type.value not in {3, 5, 6, 7, 8}:
                 return False
             return check(_ctx) if check else True
 
@@ -1798,7 +1803,7 @@ class Client:
             components, messages, check=_check, timeout=timeout
         )
 
-        if ctx.data.component_type == 4:
+        if ctx.data.component_type == 3:
             return ctx, ctx.data.values
 
         _list = []  # temp storage for items
