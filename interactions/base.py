@@ -6,10 +6,11 @@ __all__ = (
     "__authors__",
 )
 
-__version__ = "4.4.1"
+__version__ = "4.4.2"
 
 __authors__ = {
     "current": [
+        {"name": "LordOfPolls<@LordOfPolls>", "status": "Project Maintainer"},
         {"name": "DeltaX<@DeltaXWizard>", "status": "Project Maintainer"},
         {"name": "Astrea<@Astrea49>", "status": "Developer"},
         {"name": "Toricane<@Toricane>", "status": "Developer"},
@@ -19,7 +20,6 @@ __authors__ = {
     "old": [
         {"name": "EdVraz<@EdVraz>"},
         {"name": "James Walston<@jameswalston>"},
-        {"name": "Daniel Allen<@LordOfPolls>"},
         {"name": "eunwoo1104<@eunwoo1104>"},
     ],
 }
